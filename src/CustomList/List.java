@@ -86,7 +86,7 @@ public class List<DataType>
      */
     public void addTo(DataType elem, int index) throws Exception
     {
-        if (index > size && index < 0)
+        if (index > size || index < 0)
         {
             throw new Exception("Out of range");
         }
