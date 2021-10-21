@@ -45,7 +45,7 @@ public class Node <DataType>
             return false;
         }
         Node<DataType> other = (Node<DataType>) obj;
-        if(!this.data.equals(other.data) || !this.next.equals(other.next))
+        if(!this.data.equals(other.data))
         {
             return false;
         }

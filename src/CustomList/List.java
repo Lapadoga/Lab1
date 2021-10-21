@@ -86,7 +86,7 @@ public class List<DataType>
      */
     public void addTo(DataType elem, int index) throws Exception
     {
-        if (index > size)
+        if (index > size && index < 0)
         {
             throw new Exception("Out of range");
         }
@@ -115,15 +115,16 @@ public class List<DataType>
      */
     public void deleteFromHead() throws Exception
     {
-        if (isEmpty())
-        {
-            throw new Exception("List is empty");
-        }
-        else
-        {
-            head = head.next;
-            size--;
-        }
+//        if (isEmpty())
+//        {
+//            throw new Exception("List is empty");
+//        }
+//        else
+//        {
+//            head = head.next;
+//            size--;
+//        }
+        popFromHead();
     }
 
     /**
@@ -132,24 +133,25 @@ public class List<DataType>
      */
     public void deleteFromTail() throws Exception
     {
-        if (isEmpty())
-        {
-            throw new Exception("List is empty");
-        }
-        else if (size == 1)
-        {
-            deleteFromHead();
-        }
-        else
-        {
-            Node<DataType> temp = head;
-            while (temp.next.next != null)
-            {
-                temp = temp.next;
-            }
-            temp.next = null;
-            size--;
-        }
+//        if (isEmpty())
+//        {
+//            throw new Exception("List is empty");
+//        }
+//        else if (size == 1)
+//        {
+//            deleteFromHead();
+//        }
+//        else
+//        {
+//            Node<DataType> temp = head;
+//            while (temp.next.next != null)
+//            {
+//                temp = temp.next;
+//            }
+//            temp.next = null;
+//            size--;
+//        }
+        popFromTail();
     }
 
     /**
@@ -159,20 +161,21 @@ public class List<DataType>
      */
     public void deleteFrom(int index) throws Exception
     {
-        if (index >= size) {
-            throw new Exception("Out of range");
-        } else if (index == 0) {
-            deleteFromHead();
-        } else {
-            Node<DataType> temp = head;
-            for (int i = 0; i < index - 1; i++) {
-                temp = temp.next;
-            }
-            Node<DataType> delNode = temp.next;
-            temp.next = delNode.next;
-            delNode.next = null;
-            size--;
-        }
+//        if (index >= size || index < 0) {
+//            throw new Exception("Out of range");
+//        } else if (index == 0) {
+//            deleteFromHead();
+//        } else {
+//            Node<DataType> temp = head;
+//            for (int i = 0; i < index - 1; i++) {
+//                temp = temp.next;
+//            }
+//            Node<DataType> delNode = temp.next;
+//            temp.next = delNode.next;
+//            delNode.next = null;
+//            size--;
+//        }
+        popFrom(index);
     }
 
     /**
